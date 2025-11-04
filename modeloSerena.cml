@@ -1,0 +1,51 @@
+Domain Serena{
+
+Bounded Context Serena implements Serena{
+    Aggregate Usuario{
+        Entity Usuario{
+        aggregate root
+        -Email usuarioEmail
+        -Cpf cpf
+        -Endereco endereco
+        String nome
+        String senha
+        DateTime dataNascimento
+        Repository UsuarioRepository{
+            void salvar(@Usuario usuario);
+        }
+        }
+        ValueObject Email{
+            String caracteres
+        }
+        ValueObject Cpf{
+            String digitos
+        }
+        ValueObject Endereco{
+            String rua
+            int numero
+            String complemento
+            String pontoDeReferencia
+        }
+    }
+    Aggregate Formulario{
+        Entity Formulario{
+        aggregate root
+        -FormularioId formulario
+        -Cpf Cpf
+        -Endereco endereco
+        String nome
+        Repository FormularioRepository{
+        void salvar(@Formulario formulario)
+        }
+        }
+        ValueObject FormularioId{
+            int id
+        }
+
+    }
+
+}
+
+
+
+}
