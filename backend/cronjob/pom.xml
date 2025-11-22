@@ -4,36 +4,27 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>br.com.serena</groupId>
-    <artifactId>backend</artifactId>
-    <version>1.0.0</version>
-    <relativePath>../pom.xml</relativePath>
-</parent>
+    <parent>
+        <groupId>br.com.serena</groupId>
+        <artifactId>backend</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-
-    <artifactId>api-ia</artifactId>
+    <artifactId>cronjob</artifactId>
     <version>1.0.0</version>
 
     <dependencies>
 
-        <!-- API REST -->
+        <!-- Spring Boot básico -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Persistência (se for usar banco) -->
+        <!-- Caso precise acessar banco -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <!-- Testes -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>

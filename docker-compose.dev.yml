@@ -1,0 +1,113 @@
+
+services:
+
+  api-gateway:
+    build:
+      context: ./backend/api-gateway
+      dockerfile: Dockerfile.dev
+    container_name: api-gateway
+    depends_on:
+      - api-login
+      - api-denuncia
+      - api-ligacao
+      - api-dashboard
+      - api-ia
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/api-gateway:/app
+    command: ["mvn", "spring-boot:run"]
+    networks:
+      - serana_net
+
+  api-login:
+    build:
+      context: ./backend/api-login
+      dockerfile: Dockerfile.dev
+    container_name: api-login
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./backend/api-login:/app
+    command: ["mvn", "spring-boot:run"]
+    networks:
+      - serana_net
+  
+  api-denuncia:
+    build:
+      context: ./backend/api-denuncia
+      dockerfile: Dockerfile.dev
+    container_name: api-denuncia
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./backend/api-denuncia:/app
+    command: ["mvn", "spring-boot:run"]
+    networks:
+      - serana_net
+
+  api-ligacao:
+    build:
+      context: ./backend/api-ligacao
+      dockerfile: Dockerfile.dev
+    container_name: api-ligacao
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./backend/api-ligacao:/app
+    command: ["mvn", "spring-boot:run"]
+    networks:
+      - serana_net
+
+  api-dashboard:
+    build:
+      context: ./backend/api-dashboard
+      dockerfile: Dockerfile.dev
+    container_name: api-dashboard
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./backend/api-dashboard:/app
+    command: ["mvn", "spring-boot:run"]
+    networks:
+      - serana_net
+
+  api-ia:
+    build:
+      context: ./backend/api-ia
+      dockerfile: Dockerfile.dev
+    container_name: api-ia
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./backend/api-ia:/app
+    command: ["mvn", "spring-boot:run"]
+    networks:
+      - serana_net
+
+  cronjob:
+    build:
+      context: ./backend/cronjob   # CORRIGIDO
+      dockerfile: Dockerfile.dev
+    container_name: cronjob
+    volumes:
+      - ./backend/cronjob:/app     # CORRIGIDO
+    command: ["python3", "main.py"]
+    networks:
+      - serana_net
+
+  frontend:
+    build:
+      context: ./frontend/app
+      dockerfile: Dockerfile.dev
+    container_name: serana_frontend
+    ports:
+      - "8087:8080"
+    volumes:
+      - ./frontend/app:/app
+    networks:
+      - serana_net
+
+networks:
+  serana_net:
+    driver: bridge

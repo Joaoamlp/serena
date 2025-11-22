@@ -1,0 +1,81 @@
+version: "3.9"
+
+services:
+
+  api-gateway:
+    build:
+      context: ./backend/api-gateway
+      dockerfile: Dockerfile.prod
+    image: serana/api-gateway:prod
+    ports:
+      - "8080:8080"
+    networks:
+      - serana_net
+    depends_on:
+      - api-login
+      - api-denuncia
+      - api-ligacao
+      - api-dashboard
+      - api-ia
+
+  api-login:
+    build:
+      context: ./backend/api-login
+      dockerfile: Dockerfile.prod
+    image: serana/api-login:prod
+    networks:
+      - serana_net
+
+  api-denuncia:
+    build:
+      context: ./backend/api-denuncia
+      dockerfile: Dockerfile.prod
+    image: serana/api-denuncia:prod
+    networks:
+      - serana_net
+
+  api-ligacao:
+    build:
+      context: ./backend/api-ligacao
+      dockerfile: Dockerfile.prod
+    image: serana/api-ligacao:prod
+    networks:
+      - serana_net
+
+  api-dashboard:
+    build:
+      context: ./backend/api-dashboard
+      dockerfile: Dockerfile.prod
+    image: serana/api-dashboard:prod
+    networks:
+      - serana_net
+
+  api-ia:
+    build:
+      context: ./backend/api-ia
+      dockerfile: Dockerfile.prod
+    image: serana/api-ia:prod
+    networks:
+      - serana_net
+
+  cronjob:
+    build:
+      context: ./backend/cronJob
+      dockerfile: Dockerfile.prod
+    image: serana/cronjob:prod
+    networks:
+      - serana_net
+
+  frontend:
+    build:
+      context: ./frontend/app
+      dockerfile: Dockerfile.prod
+    container_name: serana_frontend_prod
+    ports:
+      - "80:80"
+    networks:
+      - serana_net
+      
+networks:
+  serana_net:
+    driver: bridge

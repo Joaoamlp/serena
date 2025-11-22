@@ -1,0 +1,16 @@
+FROM maven:3.9.6-eclipse-temurin-21 AS builder
+WORKDIR /backend
+
+# Copia apenas o pom raiz (pai)
+COPY ../pom.xml ./pom.xml
+COPY . ./api-ia
+RUN mvn -pl api-ia -am clean package -DskipTests
+
+# Agora sim podemos compilar somente o módulo
+RUN mvn -pl api-ligacao -am clean package -DskipTests
+
+FROM eclipse-temurin:21-jre
+WORKDIR /backend
+
+COPY --from=builder /backend/api-ia/target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]

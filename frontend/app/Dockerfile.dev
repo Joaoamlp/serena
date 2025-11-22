@@ -1,0 +1,12 @@
+FROM ghcr.io/cirruslabs/flutter:latest
+
+WORKDIR /frontend
+
+# Copia as dependências para cache
+COPY pubspec.yaml pubspec.lock ./
+RUN flutter pub get
+
+# Copia o resto do app
+COPY . .
+
+CMD ["flutter", "build", "web"]

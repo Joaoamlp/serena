@@ -4,15 +4,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-  <parent>
+<parent>
     <groupId>br.com.serena</groupId>
     <artifactId>backend</artifactId>
     <version>1.0.0</version>
     <relativePath>../pom.xml</relativePath>
 </parent>
 
-
-    <artifactId>api-ia</artifactId>
+    <artifactId>api-ligacao</artifactId>
     <version>1.0.0</version>
 
     <dependencies>
