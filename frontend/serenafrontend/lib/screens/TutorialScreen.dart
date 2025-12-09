@@ -297,11 +297,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
     return Column(
       children: [
         const SizedBox(height: 40),
-        const Icon(
-          Icons.chat_bubble_outline_rounded,
-          size: 100,
-          color: Colors.deepPurple,
-        ),
+        Image(image:AssetImage('lib/assets/images/Group7.png')),
 
         const SizedBox(height: 24),
         const Text(

@@ -8,7 +8,7 @@ import 'package:serenafrontend/services/FloatingButtonController.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  Widget cardHome(IconData icon, String text) {
+  Widget cardHome(Widget image, String text) {
     return Expanded(
       child: Container(
         padding: const EdgeInsets.all(16),
@@ -18,8 +18,9 @@ class HomeScreen extends StatelessWidget {
           boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 10)],
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, color: Colors.deepPurple, size: 30),
+            image, // Agora recebe qualquer widget de imagem
             const SizedBox(height: 10),
             Text(text, textAlign: TextAlign.center),
           ],
@@ -31,7 +32,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: const Color(0xFFF3ECFF),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -57,9 +57,15 @@ class HomeScreen extends StatelessWidget {
 
                 Row(
                   children: [
-                    cardHome(Icons.security, 'Dicas de\nSegurança'),
+                    cardHome(
+                      Image.asset('lib/assets/icons/iconShield.png'),
+                      'Dicas de\nSegurança',
+                    ),
                     const SizedBox(width: 16),
-                    cardHome(Icons.report, 'Realize uma\nDenúncia'),
+                    cardHome(
+                      Image.asset('lib/assets/icons/iconExclamtion.png'),
+                      'Realize uma\nDenúncia',
+                    ),
                   ],
                 ),
 
@@ -149,7 +155,7 @@ class HomeScreen extends StatelessWidget {
           } else if (index == 3) {
             Navigator.pushNamed(context, '/DenunciaScreen');
           } else if (index == 4) {
-            Navigator.pushNamed(context, '/perfil');
+            Navigator.pushNamed(context, '/PerfilScreen');
           }
         },
       ),

@@ -7,6 +7,7 @@ import 'package:geocoding/geocoding.dart';
 import '../widgets/SucessoDialog.dart';
 import '../services/navigator.dart'; // ✅ IMPORTANTE
 import 'ConfirmarDenuncia.dart';
+import 'package:intl/intl.dart';
 
 class FloatingButton extends StatefulWidget {
   const FloatingButton({super.key});
@@ -112,10 +113,9 @@ class _FloatingButtonState extends State<FloatingButton>
               pos.latitude,
               pos.longitude,
             );
-            debugPrint("Endereço convertido: $endereco");
-
-            String dataHora = DateTime.now().toString();
-            debugPrint("Data e hora: $dataHora");
+            DateTime agora = DateTime.now();
+            String dataHora = DateFormat('dd/MM/yyyy HH:mm').format(agora);
+            debugPrint("Data e hora formatada: $dataHora");
 
             // Remove o loading
             Navigator.of(navigatorKey.currentContext!).pop();

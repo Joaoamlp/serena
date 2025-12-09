@@ -34,24 +34,36 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
     super.dispose();
   }
 
-  // Função para preencher endereço automaticamente
+  // Função para preencher endereço automaticamente com loading
   Future<void> preencherEnderecoAtual(TextEditingController controller) async {
     try {
+      // Mostra o loading
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => const Center(
+          child: CircularProgressIndicator(color: Color(0xFF7C4DFF)),
+        ),
+      );
+
+      // Verifica permissões
       LocationPermission perm = await Geolocator.checkPermission();
       if (perm == LocationPermission.denied) {
         perm = await Geolocator.requestPermission();
       }
 
-      if (perm == LocationPermission.deniedForever ||
-          perm == LocationPermission.denied) {
+      if (perm == LocationPermission.deniedForever || perm == LocationPermission.denied) {
+        Navigator.of(context).pop(); // fecha o loading
         debugPrint("Permissão de localização negada.");
         return;
       }
 
+      // Pega a localização
       final pos = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
 
+      // Converte coordenadas em endereço
       List<Placemark> placemarks = await placemarkFromCoordinates(
         pos.latitude,
         pos.longitude,
@@ -63,8 +75,12 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
 
       controller.text = endereco;
       debugPrint("Endereço preenchido: $endereco");
+
     } catch (e) {
       debugPrint("Erro ao preencher endereço: $e");
+    } finally {
+      // Fecha o loading independente do resultado
+      Navigator.of(context).pop();
     }
   }
 
@@ -74,7 +90,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
     bool isDate = false,
     bool erro = false,
     String? erroMsg,
-    bool isEndereco = false, // novo parâmetro
+    bool isEndereco = false,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,13 +104,13 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
           decoration: InputDecoration(
             hintText: isDate ? 'Selecione' : 'Escreva aqui',
             suffixIcon: isDate
-                ? const Icon(Icons.calendar_today)
+                ? const Icon(Icons.calendar_today, color: Color(0xFF7C4DFF))
                 : isEndereco
-                ? IconButton(
-                    icon: const Icon(Icons.my_location),
-                    onPressed: () => preencherEnderecoAtual(controller),
-                  )
-                : null,
+                    ? IconButton(
+                        icon: const Icon(Icons.my_location, color: Color(0xFF7C4DFF)),
+                        onPressed: () => preencherEnderecoAtual(controller),
+                      )
+                    : null,
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(
@@ -160,6 +176,28 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
     });
 
     return !(erroTipo || erroLocal || erroData || erroDescricao);
+  }
+
+  void enviarDenuncia() async {
+    if (!validarCampos()) return;
+
+    // Mostra o loading de envio
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(
+        child: CircularProgressIndicator(color: Color(0xFF7C4DFF)),
+      ),
+    );
+
+    // Pequena simulação de delay (ex: envio para servidor)
+    await Future.delayed(const Duration(seconds: 2));
+
+    // Fecha o loading
+    Navigator.of(context).pop();
+
+    // Confirmação da denúncia
+    confirmarDenuncia();
   }
 
   void confirmarDenuncia() {
@@ -236,7 +274,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
                   localController,
                   erro: erroLocal,
                   erroMsg: "Informe o local.",
-                  isEndereco: true, // aqui adiciona o ícone de localização
+                  isEndereco: true,
                 ),
                 input(
                   'Qual a data e o horário do ocorrido?',
@@ -253,10 +291,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
-                  onPressed: () {
-                    if (!validarCampos()) return;
-                    confirmarDenuncia();
-                  },
+                  onPressed: enviarDenuncia,
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 50),
                     backgroundColor: Colors.white,
@@ -279,7 +314,7 @@ class _DenunciaScreenState extends State<DenunciaScreen> {
           } else if (index == 2) {
             Navigator.pushReplacementNamed(context, '/chat');
           } else if (index == 4) {
-            Navigator.pushReplacementNamed(context, '/perfil');
+            Navigator.pushReplacementNamed(context, '/PerfilScreen');
           }
         },
       ),

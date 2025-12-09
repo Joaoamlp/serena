@@ -18,6 +18,7 @@ dependencies:
   geolocator: ^10.1.0
   flutter_sound: ^9.2.13
   geocoding: ^2.1.0
+  intl: ^0.18.1
 
 
 dev_dependencies:
@@ -35,6 +36,13 @@ flutter:
     - lib/assets/icons/
     - lib/assets/fonts/
     - lib/assets/images/
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: lib\assets\fonts\Manrope\Manrope-VariableFont_wght.ttf
+        - asset: lib\assets\fonts\Manrope\static\Manrope-Bold.ttf
+          weight: 700
+         
 
 
 flutter_launcher_icons:
