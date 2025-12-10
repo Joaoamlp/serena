@@ -15,7 +15,7 @@ namespace api_user.Controllers
             _userService = userService;
         }
 
-        [HttpPost("login")]
+        [HttpPost("login")] //api/User/login
         public async Task<IActionResult> Login([FromBody] UserLoginDto dto)
         {
             if (dto == null || string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
