@@ -1,0 +1,21 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7094
+        }
+      ],
+      "UpstreamPathTemplate": "/User/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+     
+    }
+  ],
+  // GlobalConfiguration agora está no nível raiz, fora da array "Routes"
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7213"
+  }
+}
