@@ -8,22 +8,29 @@ import 'package:serenafrontend/services/FloatingButtonController.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  Widget cardHome(Widget image, String text) {
+  Widget cardHome({
+    required Widget image,
+    required String text,
+    VoidCallback? onTap, // função opcional
+  }) {
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(14),
-          boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 10)],
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            image, // Agora recebe qualquer widget de imagem
-            const SizedBox(height: 10),
-            Text(text, textAlign: TextAlign.center),
-          ],
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(14),
+            boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 10)],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              image,
+              const SizedBox(height: 10),
+              Text(text, textAlign: TextAlign.center),
+            ],
+          ),
         ),
       ),
     );
@@ -58,13 +65,19 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     cardHome(
-                      Image.asset('lib/assets/icons/iconShield.png'),
-                      'Dicas de\nSegurança',
+                      image: Image.asset('lib/assets/icons/iconShield.png'),
+                      text: 'Dicas de\nSegurança',
+                      onTap: () {
+                        Navigator.pushNamed(context, '/DicasSegurancaScreen');
+                      },
                     ),
                     const SizedBox(width: 16),
                     cardHome(
-                      Image.asset('lib/assets/icons/iconExclamtion.png'),
-                      'Realize uma\nDenúncia',
+                      image: Image.asset('lib/assets/icons/iconExclamtion.png'),
+                      text: 'Realize uma\nDenúncia',
+                      onTap: () {
+                        Navigator.pushNamed(context, '/DenunciaScreen');
+                      },
                     ),
                   ],
                 ),

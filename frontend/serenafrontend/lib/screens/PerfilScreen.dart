@@ -39,24 +39,29 @@ class _PerfilScreenState extends State<PerfilScreen> {
       emailErro = emailController.text.isEmpty
           ? "Campo obrigatório"
           : !RegExp(r"^[^@]+@[^@]+\.[^@]+").hasMatch(emailController.text)
-              ? "E-mail inválido"
-              : null;
+          ? "E-mail inválido"
+          : null;
 
       cpfErro = cpfController.text.isEmpty
           ? "Campo obrigatório"
-          : !RegExp(r"^[0-9]+$").hasMatch(cpfController.text)
-              ? "Digite apenas números"
-              : cpfController.text.length != 11
-                  ? "CPF deve ter exatamente 11 números"
-                  : null;
+          : !RegExp(
+              r"^[0-9]+$",
+            ).hasMatch(cpfController.text.replaceAll(RegExp(r'[^0-9]'), ''))
+          ? "Digite apenas números"
+          : cpfController.text.replaceAll(RegExp(r'[^0-9]'), '').length != 11
+          ? "CPF deve ter exatamente 11 números"
+          : null;
 
       telefoneErro = telefoneController.text.isEmpty
           ? "Campo obrigatório"
-          : !RegExp(r"^[0-9]+$").hasMatch(telefoneController.text)
-              ? "Digite apenas números"
-              : telefoneController.text.length != 11
-                  ? "Telefone deve ter exatamente 11 números"
-                  : null;
+          : !RegExp(r"^[0-9]+$").hasMatch(
+              telefoneController.text.replaceAll(RegExp(r'[^0-9]'), ''),
+            )
+          ? "Digite apenas números"
+          : telefoneController.text.replaceAll(RegExp(r'[^0-9]'), '').length !=
+                11
+          ? "Telefone deve ter exatamente 11 números"
+          : null;
     });
 
     return nomeErro == null &&
@@ -93,24 +98,63 @@ class _PerfilScreenState extends State<PerfilScreen> {
                     // Validar ao clicar em CONCLUIR
                     if (!validarCampos()) return;
 
-                    // ---------- FORMATAÇÃO CPF ----------
-                    String cpf = cpfController.text.replaceAll(RegExp(r'[^0-9]'), '');
-                    if (cpf.length == 11) {
-                      cpfController.text =
-                          "${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(6, 9)}-${cpf.substring(9, 11)}";
-                    }
+                    // Mostrar confirmação antes de aplicar mudanças
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text("Aplicar mudanças"),
+                        content: const Text(
+                          "Deseja realmente salvar as alterações?",
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop(); // Fecha o diálogo
+                            },
+                            child: const Text("Cancelar"),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              // ---------- FORMATAÇÃO CPF ----------
+                              String cpf = cpfController.text.replaceAll(
+                                RegExp(r'[^0-9]'),
+                                '',
+                              );
+                              if (cpf.length == 11) {
+                                cpfController.text =
+                                    "${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(6, 9)}-${cpf.substring(9, 11)}";
+                              }
 
-                    // ---------- FORMATAÇÃO TELEFONE ----------
-                    String tel = telefoneController.text.replaceAll(RegExp(r'[^0-9]'), '');
-                    if (tel.length == 11) {
-                      telefoneController.text =
-                          "(${tel.substring(0, 2)}) ${tel.substring(2, 7)}-${tel.substring(7, 11)}";
-                    }
+                              // ---------- FORMATAÇÃO TELEFONE ----------
+                              String tel = telefoneController.text.replaceAll(
+                                RegExp(r'[^0-9]'),
+                                '',
+                              );
+                              if (tel.length == 11) {
+                                telefoneController.text =
+                                    "(${tel.substring(0, 2)}) ${tel.substring(2, 7)}-${tel.substring(7, 11)}";
+                              }
+
+                              setState(() {
+                                editar = false; // Sai do modo edição
+                              });
+
+                              Navigator.of(context).pop(); // Fecha o diálogo
+                            },
+                            child: const Text(
+                              "Confirmar",
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  } else {
+                    // Entra no modo editar
+                    setState(() {
+                      editar = true;
+                    });
                   }
-
-                  setState(() {
-                    editar = !editar;
-                  });
                 },
                 icon: const Icon(Icons.edit, color: Color(0xFF7C4DFF)),
                 label: Text(
@@ -118,7 +162,6 @@ class _PerfilScreenState extends State<PerfilScreen> {
                   style: const TextStyle(color: Color(0xFF7C4DFF)),
                 ),
               ),
-
               const SizedBox(height: 25),
 
               _campoFantasma(
@@ -218,7 +261,50 @@ class _PerfilScreenState extends State<PerfilScreen> {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
       ),
       onTap: () {
-        if (!editar) FocusScope.of(context).unfocus();
+        if (!editar) {
+          FocusScope.of(context).unfocus();
+          return;
+        }
+
+        // Remove máscara ao editar
+        if (controller == cpfController || controller == telefoneController) {
+          controller.text = controller.text.replaceAll(RegExp(r'[^0-9]'), '');
+          controller.selection = TextSelection.fromPosition(
+            TextPosition(offset: controller.text.length),
+          );
+        }
+      },
+      onChanged: (value) {
+        if (!editar) return;
+
+        String newText = value.replaceAll(RegExp(r'[^0-9]'), '');
+
+        if (controller == cpfController) {
+          if (newText.length > 11) newText = newText.substring(0, 11);
+          String formatted = '';
+          for (int i = 0; i < newText.length; i++) {
+            formatted += newText[i];
+            if (i == 2 || i == 5) formatted += '.';
+            if (i == 8) formatted += '-';
+          }
+          controller.value = TextEditingValue(
+            text: formatted,
+            selection: TextSelection.collapsed(offset: formatted.length),
+          );
+        } else if (controller == telefoneController) {
+          if (newText.length > 11) newText = newText.substring(0, 11);
+          String formatted = '';
+          for (int i = 0; i < newText.length; i++) {
+            if (i == 0) formatted += '(';
+            if (i == 2) formatted += ') ';
+            if (i == 7) formatted += '-';
+            formatted += newText[i];
+          }
+          controller.value = TextEditingValue(
+            text: formatted,
+            selection: TextSelection.collapsed(offset: formatted.length),
+          );
+        }
       },
     );
   }
@@ -293,7 +379,6 @@ class _PerfilScreenState extends State<PerfilScreen> {
           return;
         }
 
-        // ---------- OUTRAS AÇÕES ----------
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text("Ação '$text' pressionada")));
