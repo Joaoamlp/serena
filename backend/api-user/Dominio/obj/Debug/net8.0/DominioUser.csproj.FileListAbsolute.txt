@@ -10,3 +10,15 @@ C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\Dominio\obj\Debug
 C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\Dominio\obj\Debug\net8.0\refint\DominioUser.dll
 C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.pdb
 C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\Dominio\obj\Debug\net8.0\ref\DominioUser.dll
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\bin\Debug\net8.0\DominioUser.deps.json
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\bin\Debug\net8.0\DominioUser.dll
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\bin\Debug\net8.0\DominioUser.pdb
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.AssemblyInfoInputs.cache
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.AssemblyInfo.cs
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.csproj.CoreCompileInputs.cache
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.sourcelink.json
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.dll
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\refint\DominioUser.dll
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\DominioUser.pdb
+C:\Users\mater\Desktop\serena\backend\api-user\Dominio\obj\Debug\net8.0\ref\DominioUser.dll

@@ -105,7 +105,7 @@ namespace InfrastructureUser.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DataNascimento")
+                    b.Property<DateTime?>("DataNascimento")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -121,11 +121,9 @@ namespace InfrastructureUser.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Rg")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -157,8 +155,7 @@ namespace InfrastructureUser.Migrations
 
             modelBuilder.Entity("DominioUser.User", b =>
                 {
-                    b.Navigation("Endereco")
-                        .IsRequired();
+                    b.Navigation("Endereco");
 
                     b.Navigation("NumerosDeApoio");
                 });

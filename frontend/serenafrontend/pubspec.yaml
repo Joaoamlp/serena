@@ -19,6 +19,10 @@ dependencies:
   flutter_sound: ^9.2.13
   geocoding: ^2.1.0
   intl: ^0.18.1
+  http: ^1.6.0
+  mask_text_input_formatter: ^2.4.0
+  shared_preferences: ^2.1.1
+
 
 
 dev_dependencies:

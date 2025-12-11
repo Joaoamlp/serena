@@ -11,6 +11,7 @@ import 'screens/HomeScreen.dart';
 import 'screens/DenunciaScreen.dart';
 import 'screens/TutorialScreen.dart';
 import 'widgets/FloatingButton.dart';
+import 'screens/ConfigScreen.dart';
 
 // ✅ IMPORT DO NAVIGATION SERVICE
 import '../services/navigator.dart';
@@ -104,6 +105,7 @@ class MyApp extends StatelessWidget {
         '/DenunciaScreen': (context) => const DenunciaScreen(),
         '/TutorialScreen': (context) => const TutorialScreen(),
         '/PerfilScreen': (context) => const PerfilScreen(),
+        '/ConfigScreen': (context) => const ConfigScreen(),
       },
     );
   }

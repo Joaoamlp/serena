@@ -12,7 +12,6 @@ namespace ServiceUser
         public string Name { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        public string EmailAddress { get; set; }
         public DateTime DataNascimento { get; set; }
         public EnderecoDto Endereco { get; set; }
         public List<ApoiosDto> Apoios { get; set; }

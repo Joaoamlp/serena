@@ -66,32 +66,92 @@ namespace ServiceUser
         
 
         public async Task<UserReadDTO> UpdateUserAsync(int id, UserUpdateDto dto)
+{
+    if (dto == null) throw new ArgumentNullException(nameof(dto));
+
+    // Carrega o user com Endereco e Apoios
+    var existing = await _userRepository.GetByIdWithIncludesAsync(id, u => u.Endereco, u => u.NumerosDeApoio);
+    if (existing == null)
+        throw new InvalidOperationException("Usuário não encontrado.");
+
+    // Validações de unicidade (ex.: email) — ignore o próprio usuário
+    await VerifyUniqueFieldsAsync(dto.Email, null, null, id);
+
+    // Mapeia campos simples do DTO para a entidade (nome, telefone, etc.)
+    _mapper.Map(dto, existing);
+
+    // ======= 1:1 Endereco =======
+    if (dto.Endereco == null)
+    {
+        // Se o dto não possui endereço, decide se quer remover o existente:
+        // existing.Endereco = null; // se quiser apagar
+    }
+    else
+    {
+        if (existing.Endereco == null)
         {
-            var existing = await _userRepository.GetByIdAsync(id);
+            // Nenhum endereço existente — criar novo e atribuir ao user
+            var novoEndereco = _mapper.Map<Endereco>(dto.Endereco);
+            // Garantir vínculo correto
+            novoEndereco.UserId = existing.Id;
+            novoEndereco.User = existing;
+            existing.Endereco = novoEndereco;
+        }
+        else
+        {
+            // Já existe endereço — atualizar os campos do endereço existente (merge)
+            _mapper.Map(dto.Endereco, existing.Endereco);
+            // existing.Endereco.UserId deve permanecer como existing.Id
+            existing.Endereco.UserId = existing.Id;
+        }
+    }
 
-            if (existing == null)
-                throw new InvalidOperationException($"Usuário com ID {id} não encontrado para atualização.");
+    // ======= 1:N Apoios (sincronizar) =======
+    var incomingApoios = dto.Apoios ?? new List<ApoiosDto>();
 
-            try
+    // IDs vindos do cliente (somente os >0 são updates)
+    var incomingIds = incomingApoios.Where(a => a.Id != 0).Select(a => a.Id).ToHashSet();
+
+    // Remove apoios que existem no DB mas não vieram no DTO
+    var toRemove = existing.NumerosDeApoio.Where(a => !incomingIds.Contains(a.Id)).ToList();
+    foreach (var rem in toRemove)
+    {
+        existing.NumerosDeApoio.Remove(rem);
+    }
+
+    // Atualiza existentes e adiciona novos
+    foreach (var apoioDto in incomingApoios)
+    {
+        if (apoioDto.Id == 0)
+        {
+            // Novo apoio
+            var novo = _mapper.Map<Apoios>(apoioDto);
+            novo.User = existing;
+            novo.UserId = existing.Id;
+            existing.NumerosDeApoio.Add(novo);
+        }
+        else
+        {
+            var atual = existing.NumerosDeApoio.FirstOrDefault(a => a.Id == apoioDto.Id);
+            if (atual != null)
             {
-                // Mapeia e Persiste
-                _mapper.Map(dto, existing);
-                await _userRepository.UpdateAsync(existing);
-                await _userRepository.SaveChangesAsync();
-
-                return _mapper.Map<UserReadDTO>(existing);
+                _mapper.Map(apoioDto, atual);
             }
-            catch (DbUpdateException ex)
+            else
             {
-                throw new InvalidOperationException(
-                    $"Falha ao atualizar o usuário ID {id} no banco de dados. Detalhes: {ex.InnerException?.Message ?? ex.Message}", ex);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Erro inesperado ao atualizar o usuário ID {id}.", ex);
+                // Caso cliente enviou ID que não existe — opcional: criar ou ignorar
+                // aqui vamos ignorar ou lançar
+                throw new InvalidOperationException($"Apoio com Id {apoioDto.Id} não encontrado para o usuário.");
             }
         }
+    }
 
+    // Persistir alterações (presuma que UpdateAsync salva apenas marca para update)
+    await _userRepository.UpdateAsync(existing);
+    await _userRepository.SaveChangesAsync();
+
+    return _mapper.Map<UserReadDTO>(existing);
+}
         
 
         public async Task<UserReadDTO> DeleteUserAsync(int id)
