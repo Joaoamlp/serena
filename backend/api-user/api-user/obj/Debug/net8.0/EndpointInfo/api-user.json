@@ -332,10 +332,6 @@
             "type": "string",
             "nullable": true
           },
-          "emailAddress": {
-            "type": "string",
-            "nullable": true
-          },
           "dataNascimento": {
             "type": "string",
             "format": "date-time"

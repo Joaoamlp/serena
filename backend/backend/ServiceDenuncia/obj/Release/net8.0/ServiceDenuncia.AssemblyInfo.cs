@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServiceDenuncia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da381a0d74d563bbaad791cbf221dcadbe17d4ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea9153d246a2d24d28608d658185f88778a6c85c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServiceDenuncia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServiceDenuncia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,8 @@
 using InfrastructureDenuncia;
 using Microsoft.EntityFrameworkCore;
-
+using ServiceDenuncia;
+using InfrastructureGeneric;
+using ServiceDenuncia.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -22,6 +25,15 @@ if (string.IsNullOrWhiteSpace(connectionString))
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString) // Use o provedor de banco de dados apropriado
 );
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositoryEntity<>));
+builder.Services.AddScoped<IDenunciaService, DenunciaService>();
+builder.Services.AddAutoMapper(typeof(DenunciaProfile));
+builder.Services.AddHttpClient<IUserApiClient, UserApiClient>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["UserApi:BaseUrl"]);
+    client.Timeout = TimeSpan.FromSeconds(5); // timeout por request
+});
 
 var app = builder.Build();
 

@@ -11,10 +11,47 @@
       ],
       "UpstreamPathTemplate": "/User/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-     
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Denuncia",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ],
+      "UpstreamPathTemplate": "/Denuncia",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Denuncia/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ],
+      "UpstreamPathTemplate": "/Denuncia/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Denuncia/all/{userId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7203
+        }
+      ],
+      "UpstreamPathTemplate": "/Denuncia/all/{userId}",
+      "UpstreamHttpMethod": [ "GET" ]
     }
   ],
-  // GlobalConfiguration agora está no nível raiz, fora da array "Routes"
+
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:7213"
   }

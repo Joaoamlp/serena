@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using InfrastructureDenuncia;
 
-namespace InfrastructureUser
+namespace InfrastructureGeneric
 {
     public class GenericRepositoryEntity<T>: IGenericRepository<T> where T : class
     {

@@ -18,8 +18,7 @@ namespace InfrastructureDenuncia
         }
         // DbSet representa uma coleção de todas as entidades no contexto, ou que podem ser consultadas do banco.
         public DbSet<Denuncia> Denuncias { get; set; }
-        public DbSet<Imagen> Imagens { get; set; }
-        public DbSet<Video> Vidios { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
         // aqui fazemos a configuração do banco, como  sua estrutura.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
