@@ -51,7 +51,9 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Denuncias/all/{userId}": {
       "get": {
         "tags": [
           "Denuncias"
@@ -59,7 +61,8 @@
         "parameters": [
           {
             "name": "userId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"

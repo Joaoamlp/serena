@@ -75,7 +75,7 @@ namespace ServiceDenuncia
                 throw new ArgumentException("O ID do usuário deve ser maior que zero.", nameof(userId));
 
             var list = await DenunciaRepository
-                .FindAllByForeignKeyAsync("UserId", userId);
+                .FindAllByForeignKeyAsync("UsuarioId", userId);
             var denuncias = _mapper.Map<IEnumerable<DenunciaDto>>(list);
             return denuncias;
         }

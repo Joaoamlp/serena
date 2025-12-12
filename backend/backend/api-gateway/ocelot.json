@@ -14,7 +14,7 @@
     },
 
     {
-      "DownstreamPathTemplate": "/api/Denuncia",
+      "DownstreamPathTemplate": "/api/Denuncias",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -22,11 +22,11 @@
           "Port": 7203
         }
       ],
-      "UpstreamPathTemplate": "/Denuncia",
+      "UpstreamPathTemplate": "/Denuncias",
       "UpstreamHttpMethod": [ "POST" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Denuncia/{id}",
+      "DownstreamPathTemplate": "/api/Denuncias/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -34,12 +34,12 @@
           "Port": 7203
         }
       ],
-      "UpstreamPathTemplate": "/Denuncia/{id}",
+      "UpstreamPathTemplate": "/Denuncias/{id}",
       "UpstreamHttpMethod": [ "GET" ]
     },
 
     {
-      "DownstreamPathTemplate": "/api/Denuncia/all/{userId}",
+      "DownstreamPathTemplate": "/api/Denuncias/all/{userId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -47,7 +47,7 @@
           "Port": 7203
         }
       ],
-      "UpstreamPathTemplate": "/Denuncia/all/{userId}",
+      "UpstreamPathTemplate": "/Denuncias/all/{userId}",
       "UpstreamHttpMethod": [ "GET" ]
     }
   ],
