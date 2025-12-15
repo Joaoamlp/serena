@@ -10,7 +10,7 @@ namespace ServiceDenuncia
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public int? UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
         
         public EnderecoDto Endereco { get; set; }
         public string Status { get; set; }

@@ -11,7 +11,7 @@
         "projectName": "api-denuncia",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\api-denuncia\\api-denuncia.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\api-denuncia\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\backend\\api-denuncia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -165,7 +165,7 @@
         "projectName": "InfrastructureDenuncia",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\InfrastructureDenuncia\\InfrastructureDenuncia.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\InfrastructureDenuncia\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\backend\\InfrastructureDenuncia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -257,7 +257,7 @@
         "projectName": "InfrastructureGeneric",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\InfrastructureGeneric\\InfrastructureGeneric.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\InfrastructureGeneric\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\backend\\InfrastructureGeneric\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -327,7 +327,7 @@
         "projectName": "ServiceDenuncia",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\ServiceDenuncia\\ServiceDenuncia.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\ServiceDenuncia\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\backend\\ServiceDenuncia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

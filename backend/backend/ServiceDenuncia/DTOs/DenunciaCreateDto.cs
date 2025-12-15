@@ -11,8 +11,8 @@ namespace ServiceDenuncia
     {
         
         public string Descricao { get; set; }
-        public int? UsuarioId { get; set; }
-        public TipoViolencia TipoViolencia { get; set; }
+        public int UsuarioId { get; set; }
+        public string TipoViolencia { get; set; }
         public DateTime? CriadoEm { get; set; }
         public EnderecoDto Endereco { get; set; }
 

@@ -4844,7 +4844,7 @@
       "projectName": "api-user",
       "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\api-user\\api-user.csproj",
       "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\api-user\\api-user\\obj\\",
+      "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\api-user\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

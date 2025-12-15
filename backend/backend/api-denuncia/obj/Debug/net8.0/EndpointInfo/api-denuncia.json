@@ -193,11 +193,11 @@
           },
           "usuarioId": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "tipoViolencia": {
-            "$ref": "#/components/schemas/TipoViolencia"
+            "type": "string",
+            "nullable": true
           },
           "criadoEm": {
             "type": "string",
@@ -223,8 +223,7 @@
           },
           "usuarioId": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
@@ -274,17 +273,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "TipoViolencia": {
-        "enum": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "type": "integer",
-        "format": "int32"
       },
       "WeatherForecast": {
         "type": "object",

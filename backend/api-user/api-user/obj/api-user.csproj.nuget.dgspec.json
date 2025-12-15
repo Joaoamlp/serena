@@ -11,7 +11,7 @@
         "projectName": "api-user",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\api-user\\api-user.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\api-user\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\api-user\\api-user\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,7 +99,7 @@
         "projectName": "DominioUser",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\Dominio\\DominioUser.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\api-user\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -165,7 +165,7 @@
         "projectName": "InfrastructureUser",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\InfrastructureUser\\InfrastructureUser.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\InfrastructureUser\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\api-user\\InfrastructureUser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -265,7 +265,7 @@
         "projectName": "ServiceUser",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\ServiceUser\\ServiceUser.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\ServiceUser\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\api-user\\ServiceUser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

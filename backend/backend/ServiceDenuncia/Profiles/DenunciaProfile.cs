@@ -14,28 +14,25 @@ namespace ServiceDenuncia.Profiles
     {
         public DenunciaProfile()
         {
-            // Endereco DTO <-> Entidade
-            CreateMap<EnderecoDto, Endereco>()
-                .ForMember(d => d.Id, opt => opt.Ignore()); // id gerado pelo db
+            // Endereço
+            CreateMap<EnderecoDto, Endereco>().ReverseMap();
 
-            CreateMap<Endereco, EnderecoDto>();
-
-            // DenunciaCreateDto -> Denuncia
+            // Create → Entity
             CreateMap<DenunciaCreateDto, Denuncia>()
-                // Se quer forçar que o servidor defina criadoEm, mantenha; caso contrário, comente essa linha.
                 .ForMember(dest => dest.CriadoEm,
-                    opt => opt.MapFrom((src, dest) => src.CriadoEm.HasValue ? src.CriadoEm.Value : DateTime.UtcNow))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(_ => DenunciaStatus.Nova))
-                // Se Endereco for null no DTO, evita criar um Endereco nulo automaticamente
-                .ForMember(dest => dest.Endereco, opt =>
-                    opt.Condition(src => src.Endereco != null));
+                    opt => opt.MapFrom(_ => DateTime.UtcNow))
+                .ForMember(dest => dest.Status,
+                    opt => opt.MapFrom(_ => DenunciaStatus.Nova))
+                .ForMember(dest => dest.TipoViolencia,
+                    opt => opt.MapFrom(src =>
+                        Enum.Parse<TipoViolencia>(src.TipoViolencia, true)));
 
-            // Denuncia -> DenunciaDto
+            // Entity → DTO
             CreateMap<Denuncia, DenunciaDto>()
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
-                .ForMember(dest => dest.TipoViolencia, opt => opt.MapFrom(src => src.TipoViolencia.ToString()))
-                // Se Endereco for null na entidade, isso preserva null no DTO
-                .ForMember(dest => dest.Endereco, opt => opt.Condition(src => src.Endereco != null));
+                .ForMember(dest => dest.Status,
+                    opt => opt.MapFrom(src => src.Status.ToString()))
+                .ForMember(dest => dest.TipoViolencia,
+                    opt => opt.MapFrom(src => src.TipoViolencia.ToString()));
 
         }
     }

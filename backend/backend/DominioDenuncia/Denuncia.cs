@@ -8,7 +8,7 @@
         public string Descricao { get; set; }
 
         // Denúncia pode ser anônima — UserId opcional
-        public int? UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
 
         public Endereco Endereco { get; set; }
 
