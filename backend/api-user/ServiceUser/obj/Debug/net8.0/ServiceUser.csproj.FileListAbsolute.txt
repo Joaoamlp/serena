@@ -34,3 +34,9 @@ C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\Serv
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\refint\ServiceUser.dll
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.pdb
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\ref\ServiceUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureGeneric.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureDenuncia.pdb

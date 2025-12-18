@@ -12,6 +12,7 @@ namespace ServiceUser
         public string Email { get; set; }
         public string Password { get; set; }   // recebido em claro; trate com hash no service
         public string Cpf { get; set; }
+
         public string Rg { get; set; }
         public string Telefone { get; set; }
         public DateTime DataNascimento { get; set; }

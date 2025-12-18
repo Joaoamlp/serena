@@ -318,3 +318,9 @@ C:\Users\mater\Desktop\serena\backend\api-user\api-user\obj\Debug\net8.0\refint\
 C:\Users\mater\Desktop\serena\backend\api-user\api-user\obj\Debug\net8.0\api-user.pdb
 C:\Users\mater\Desktop\serena\backend\api-user\api-user\obj\Debug\net8.0\api-user.genruntimeconfig.cache
 C:\Users\mater\Desktop\serena\backend\api-user\api-user\obj\Debug\net8.0\ref\api-user.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\api-user\bin\Debug\net8.0\DominioDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\api-user\bin\Debug\net8.0\InfrastructureDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\api-user\bin\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\api-user\bin\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\api-user\bin\Debug\net8.0\InfrastructureDenuncia.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\api-user\bin\Debug\net8.0\InfrastructureGeneric.pdb

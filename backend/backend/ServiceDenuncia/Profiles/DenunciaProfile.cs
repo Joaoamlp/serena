@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ServiceDenuncia;
+using ServiceDenuncia.DTOs;
 
 
 namespace ServiceDenuncia.Profiles
@@ -33,6 +34,12 @@ namespace ServiceDenuncia.Profiles
                     opt => opt.MapFrom(src => src.Status.ToString()))
                 .ForMember(dest => dest.TipoViolencia,
                     opt => opt.MapFrom(src => src.TipoViolencia.ToString()));
+
+            CreateMap<UserBasicDto, DenunciaCreateDto>().ForMember(d => d.NomeDenunciante,
+                opt => opt.MapFrom(src => src.Name))
+                .ForMember(d => d.Cpf,
+                opt => opt.MapFrom(src => src.Cpf));
+
 
         }
     }

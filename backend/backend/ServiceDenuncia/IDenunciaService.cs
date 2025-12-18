@@ -12,5 +12,6 @@ namespace ServiceDenuncia
         Task<DenunciaDto> CreatDenunciaAsync(DenunciaCreateDto dto);
         Task<IEnumerable<DenunciaDto?>> GetAllDenunciasAsync(int id);
         Task<DenunciaDto?> GetDenunciaByIdAsync(int id);
+        void UpdateByIdUser(int id);
     }
 }

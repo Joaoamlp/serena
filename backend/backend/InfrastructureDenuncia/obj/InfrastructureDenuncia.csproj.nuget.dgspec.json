@@ -77,7 +77,7 @@
         "projectName": "InfrastructureDenuncia",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\InfrastructureDenuncia\\InfrastructureDenuncia.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\backend\\InfrastructureDenuncia\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\InfrastructureDenuncia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

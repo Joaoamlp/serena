@@ -3,6 +3,8 @@ using InfrastructureUser;
 using Microsoft.EntityFrameworkCore;
 using ServiceUser;
 using ServiceUser.Profiles;
+using InfrastructureGeneric;
+using DominioUser;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +16,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(UserProfile));
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositoryEntity<>));
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddHttpClient<IDenunciaApiClient, DenunciaApiClient>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["DenunciaApi:BaseUrl"] ?? throw new InvalidOperationException("UserApi:BaseUrl não configurado."));
+    client.Timeout = TimeSpan.FromSeconds(5); // Defina um timeout apropriado
+});
 
 // 1. Obter a string de conexão
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -28,16 +34,11 @@ if (string.IsNullOrWhiteSpace(connectionString))
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString) // Use o provedor de banco de dados apropriado
 );
-
+builder.Services.AddScoped(typeof(IGenericRepository<User>), typeof(GenericRepositoryEntity<User,AppDbContext>));
 var app = builder.Build();
 
 
-// 🚀 APLICA MIGRATIONS AUTOMATICAMENTE
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
-}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

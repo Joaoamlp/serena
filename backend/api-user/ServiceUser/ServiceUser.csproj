@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\backend\InfrastructureGeneric\InfrastructureGeneric.csproj" />
     <ProjectReference Include="..\Dominio\DominioUser.csproj" />
     <ProjectReference Include="..\InfrastructureUser\InfrastructureUser.csproj" />
   </ItemGroup>

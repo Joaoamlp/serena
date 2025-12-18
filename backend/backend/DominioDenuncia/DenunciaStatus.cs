@@ -11,6 +11,7 @@ namespace DominioDenuncia
         Nova = 0,
         EmAnalise = 1,
         Indeferida = 2,
-        Resolvida = 3
+        Resolvida = 3,
+        
     }
 }

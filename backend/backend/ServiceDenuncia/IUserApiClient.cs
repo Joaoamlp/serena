@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceDenuncia.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace ServiceDenuncia
 {
     public interface IUserApiClient
     {
-        Task<bool> UserExistsAsync(int userId);
+        Task<UserBasicDto> UserExistsAsync(int userId);
     }
 }

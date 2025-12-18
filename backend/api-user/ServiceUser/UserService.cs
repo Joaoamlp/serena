@@ -6,18 +6,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using InfrastructureGeneric;
 namespace ServiceUser
 {
     public class UserService : IUserService
     {
         private readonly IGenericRepository<User> _userRepository;
         private readonly IMapper _mapper;
-
-        public UserService(IGenericRepository<User> userRepository, IMapper mapper)
+        private readonly IDenunciaApiClient _denunciaApiClient;
+        public UserService(IGenericRepository<User> userRepository, IMapper mapper, IDenunciaApiClient denunciaApiClient)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _denunciaApiClient = denunciaApiClient;
         }
 
         
@@ -165,6 +166,7 @@ namespace ServiceUser
 
             try
             {
+                _denunciaApiClient.DeletDenunciaByUserIdAsync(id);
                 await _userRepository.DeleteAsync(id);
                 await _userRepository.SaveChangesAsync();
 

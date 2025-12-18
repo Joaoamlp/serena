@@ -34,3 +34,9 @@ C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.pdb
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.genruntimeconfig.cache
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8.0\ref\InfrastructureUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureGeneric.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureDenuncia.pdb

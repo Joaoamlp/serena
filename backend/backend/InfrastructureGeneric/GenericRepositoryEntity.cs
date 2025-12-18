@@ -6,16 +6,16 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using InfrastructureDenuncia;
+
 
 namespace InfrastructureGeneric
 {
-    public class GenericRepositoryEntity<T>: IGenericRepository<T> where T : class
+    public class GenericRepositoryEntity<T, Tcontext>: IGenericRepository<T> where T : class where Tcontext : DbContext
     {
-        private readonly AppDbContext _context;
+        private readonly Tcontext _context; //contexto generico que pode ser qualquer contexto do EF
         private readonly DbSet<T> _dbSet; //tabela generica  que pode acessar outras tabelas
 
-        public GenericRepositoryEntity(AppDbContext context)
+        public GenericRepositoryEntity(Tcontext context )
         {
             _context = context;
             _dbSet = _context.Set<T>();

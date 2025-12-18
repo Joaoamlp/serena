@@ -1,3 +1,4 @@
+using DominioDenuncia;
 using InfrastructureDenuncia;
 using InfrastructureGeneric;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +32,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString) // Use o provedor de banco de dados apropriado
 );
 builder.Services.AddMemoryCache();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositoryEntity<>));
+builder.Services.AddScoped(typeof(IGenericRepository<Denuncia>), typeof(GenericRepositoryEntity<Denuncia,AppDbContext>));
 builder.Services.AddScoped<IDenunciaService, DenunciaService>();
 builder.Services.AddAutoMapper(typeof(DenunciaProfile));
 builder.Services.AddHttpClient<IUserApiClient, UserApiClient>(client =>

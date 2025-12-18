@@ -2,6 +2,7 @@
 using DominioDenuncia;
 using InfrastructureGeneric;
 using Microsoft.EntityFrameworkCore;
+using DominioDenuncia;
 
 namespace ServiceDenuncia
 {
@@ -31,10 +32,14 @@ namespace ServiceDenuncia
                 throw new ApplicationException("UsuarioId é obrigatório para criar uma denúncia.");
 
             // 🔎 valida usuário no serviço externo
-            bool exists;
+            
             try
             {
-                exists = await _userClient.UserExistsAsync(dto.UsuarioId);
+                var resp = await _userClient.UserExistsAsync(dto.UsuarioId.Value);
+                if (resp == null)
+                    throw new ApplicationException("Usuário não encontrado no serviço externo.");
+                _mapper.Map(resp, dto);
+
             }
             catch (TimeoutException)
             {
@@ -45,13 +50,13 @@ namespace ServiceDenuncia
                 throw new ApplicationException("Erro ao verificar usuário no serviço externo.");
             }
 
-            if (!exists)
-                throw new KeyNotFoundException($"Usuário com id {dto.UsuarioId} não encontrado.");
+     
 
             try
             {
+                
                 var entity = _mapper.Map<Denuncia>(dto);
-
+                
                 entity.CriadoEm = DateTime.UtcNow;
                 entity.Status = DenunciaStatus.Nova;
 
@@ -89,6 +94,33 @@ namespace ServiceDenuncia
 
             var entity = await _denunciaRepository.GetByIdWithIncludesAsync(id,e=> e.Endereco);
             return entity == null ? null : _mapper.Map<DenunciaDto>(entity);
+        }
+
+        public async void UpdateByIdUser(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("Id inválido.");
+            try
+            {
+
+
+                var lista = GetAllDenunciasAsync(id);
+
+                foreach (var dto in lista.Result)
+                {
+                    Denuncia denuncia = _mapper.Map<Denuncia>(dto);
+                    denuncia.Status = DenunciaStatus.EmAnalise;
+                    denuncia.UsuarioId = null;
+                    _denunciaRepository.UpdateAsync(denuncia);
+
+                }
+                _denunciaRepository.SaveChangesAsync();
+                
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new ApplicationException("Erro ao atualizar denúncias no banco.", ex);
+            }
         }
     }
 }

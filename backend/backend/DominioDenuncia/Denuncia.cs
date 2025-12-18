@@ -4,11 +4,15 @@
     {
         public int Id { get; set; }
 
-        // Informação básica
+        
         public string Descricao { get; set; }
 
-        // Denúncia pode ser anônima — UserId opcional
-        public int UsuarioId { get; set; }
+        
+        public int? UsuarioId { get; set; }
+
+        public string NomeDenunciante { get; set; }
+
+        public string Cpf { get; set; }
 
         public Endereco Endereco { get; set; }
 

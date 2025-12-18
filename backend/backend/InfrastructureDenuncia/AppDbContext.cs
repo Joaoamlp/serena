@@ -22,7 +22,24 @@ namespace InfrastructureDenuncia
         // aqui fazemos a configuração do banco, como  sua estrutura.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Denuncia>(entity =>
+            {
+                entity.HasKey(d => d.Id);
+
+                entity.Property(d => d.Status).HasConversion<int>();
+
+                entity.Property(d => d.TipoViolencia).HasConversion<int>();
+
+                entity.Property(d => d.UsuarioId).IsRequired(false);
+
+                entity.HasOne(d => d.Endereco).WithOne(e => e.Denuncia).HasForeignKey<Endereco>(e => e.DenunciaId).OnDelete(DeleteBehavior.Restrict);
+
+            });
+            modelBuilder.Entity<Endereco>(entity =>
+            {
+                entity.HasKey(d => d.Id);
+
+            });
         }
     }
 }

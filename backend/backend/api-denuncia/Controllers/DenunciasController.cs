@@ -22,7 +22,7 @@ namespace api_denuncia.Controllers
         /// POST /api/denuncias
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<DenunciaDto>> Create( DenunciaCreateDto dto)
+        public async Task<ActionResult<DenunciaDto>> Create(DenunciaCreateDto dto)
         {
             if (dto == null)
                 return BadRequest(new { message = "Payload não pode ser vazio." });
@@ -53,12 +53,8 @@ namespace api_denuncia.Controllers
             }
         }
 
-        /// <summary>
-        /// Recupera todas as denúncias de um usuário.
-        /// GET /api/denuncias?userId=123
-        /// </summary>
         [HttpGet("all/{userId:int}")]
-        public async Task<ActionResult<IEnumerable<DenunciaDto>>> GetAll( int userId)
+        public async Task<ActionResult<IEnumerable<DenunciaDto>>> GetAll(int userId)
         {
             if (userId <= 0)
                 return BadRequest(new { message = "Query string 'userId' é obrigatória e deve ser maior que zero." });
@@ -107,6 +103,21 @@ namespace api_denuncia.Controllers
             catch (ApplicationException appEx)
             {
                 return Problem(detail: appEx.Message, statusCode: 500, title: "Erro ao recuperar denúncia");
+            }
+            catch (Exception ex)
+            {
+                return Problem(detail: ex.Message, statusCode: 500, title: "Erro interno");
+            }
+        }
+        [HttpPost("DeleteUser/{id:int}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            try
+            {
+
+
+                _denunciaService.UpdateByIdUser(id);
+                return Ok();
             }
             catch (Exception ex)
             {

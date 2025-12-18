@@ -11,6 +11,7 @@
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "DominioUser": "1.0.0",
+          "InfrastructureGeneric": "1.0.0",
           "InfrastructureUser": "1.0.0"
         },
         "runtime": {
@@ -681,6 +682,14 @@
           }
         }
       },
+      "DominioDenuncia/1.0.0": {
+        "runtime": {
+          "DominioDenuncia.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "DominioUser/1.0.0": {
         "runtime": {
           "DominioUser.dll": {
@@ -689,9 +698,34 @@
           }
         }
       },
+      "InfrastructureDenuncia/1.0.0": {
+        "dependencies": {
+          "DominioDenuncia": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+        },
+        "runtime": {
+          "InfrastructureDenuncia.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "InfrastructureGeneric/1.0.0": {
+        "dependencies": {
+          "InfrastructureDenuncia": "1.0.0"
+        },
+        "runtime": {
+          "InfrastructureGeneric.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "InfrastructureUser/1.0.0": {
         "dependencies": {
           "DominioUser": "1.0.0",
+          "InfrastructureGeneric": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
           "Microsoft.Extensions.Configuration": "10.0.1",
@@ -1153,7 +1187,22 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
+    "DominioDenuncia/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "DominioUser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InfrastructureDenuncia/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InfrastructureGeneric/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
