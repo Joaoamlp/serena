@@ -77,6 +77,7 @@ namespace ServiceDenuncia
 
             var list = await _denunciaRepository
                 .FindAllByForeignKeyAsync("UsuarioId", userId);
+                
 
             return _mapper.Map<IEnumerable<DenunciaDto>>(list);
         }
@@ -86,7 +87,7 @@ namespace ServiceDenuncia
             if (id <= 0)
                 throw new ArgumentException("Id inválido.");
 
-            var entity = await _denunciaRepository.GetByIdAsync(id);
+            var entity = await _denunciaRepository.GetByIdWithIncludesAsync(id,e=> e.Endereco);
             return entity == null ? null : _mapper.Map<DenunciaDto>(entity);
         }
     }

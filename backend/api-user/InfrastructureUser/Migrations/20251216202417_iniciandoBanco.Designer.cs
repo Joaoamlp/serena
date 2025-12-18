@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfrastructureUser.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251211015204_MakeRgAndEnderecoOptional")]
-    partial class MakeRgAndEnderecoOptional
+    [Migration("20251216202417_iniciandoBanco")]
+    partial class iniciandoBanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,10 +64,6 @@ namespace InfrastructureUser.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Cep")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("Cidade")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -76,9 +72,9 @@ namespace InfrastructureUser.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Numero")
+                    b.Property<int>("Numero")
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Rua")
                         .IsRequired()
@@ -109,6 +105,7 @@ namespace InfrastructureUser.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DataNascimento")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -124,9 +121,11 @@ namespace InfrastructureUser.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Rg")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -158,7 +157,8 @@ namespace InfrastructureUser.Migrations
 
             modelBuilder.Entity("DominioUser.User", b =>
                 {
-                    b.Navigation("Endereco");
+                    b.Navigation("Endereco")
+                        .IsRequired();
 
                     b.Navigation("NumerosDeApoio");
                 });

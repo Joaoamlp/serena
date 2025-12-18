@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InfrastructureUser.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class iniciandoBanco : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,11 +59,10 @@ namespace InfrastructureUser.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     Rua = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Numero = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    Numero = table.Column<int>(type: "int", maxLength: 30, nullable: false),
                     Bairro = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Cidade = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Estado = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Cep = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true)
+                    Estado = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {

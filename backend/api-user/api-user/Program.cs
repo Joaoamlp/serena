@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using InfrastructureUser;
 using Microsoft.EntityFrameworkCore;
 using ServiceUser;
@@ -17,12 +17,12 @@ builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositoryEntity<>));
 builder.Services.AddScoped<IUserService, UserService>();
 
-// 1. Obter a string de conex�o
+// 1. Obter a string de conexão
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 if (string.IsNullOrWhiteSpace(connectionString))
 {
     throw new InvalidOperationException(
-        "Connection string 'DefaultConnection' n�o encontrada ou vazia. Verifique appsettings.json e o Startup Project.");
+        "Connection string 'DefaultConnection' não encontrada ou vazia. Verifique appsettings.json e o Startup Project.");
 }
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -30,6 +30,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 var app = builder.Build();
+
+
+// 🚀 APLICA MIGRATIONS AUTOMATICAMENTE
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

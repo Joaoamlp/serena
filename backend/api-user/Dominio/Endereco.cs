@@ -22,7 +22,7 @@ namespace DominioUser
 
         // Numero como string para permitir "s/n", "Apto 3", etc.
         [MaxLength(30)]
-        public string? Numero { get; set; }
+        public int Numero { get; set; }
 
         [MaxLength(100)]
         public string? Bairro { get; set; }
@@ -32,9 +32,6 @@ namespace DominioUser
 
         [MaxLength(100)]
         public string? Estado { get; set; }
-
-        [MaxLength(20)]
-        public string? Cep { get; set; }
 
         // Navegação inversa 1:1
         public User? User { get; set; }

@@ -107,7 +107,7 @@ namespace ServiceUser
             }
 
             // ======= 1:N Apoios (sincronizar) =======
-            var incomingApoios = dto.Apoios ?? new List<ApoiosDto>();
+            var incomingApoios = dto.NumerosDeApoio ?? new List<ApoiosDto>();
 
             // IDs vindos do cliente (somente os >0 são updates)
             var incomingIds = incomingApoios.Where(a => a.Id != 0).Select(a => a.Id).ToHashSet();

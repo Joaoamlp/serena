@@ -34,12 +34,12 @@ namespace ServiceUser.Profiles
             CreateMap<UserCreateDto, User>()
                 .ForMember(dest => dest.PasswordHash, opt => opt.Ignore()) // hash no service
                 .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
-                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.Apoios));
+                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.NumerosDeApoio));
 
             CreateMap<UserUpdateDto, User>()
                 .ForMember(dest => dest.PasswordHash, opt => opt.Ignore())
                 .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
-                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.Apoios));
+                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.NumerosDeApoio));
         }
 
         private static string MaskCpf(string cpf)

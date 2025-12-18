@@ -14,6 +14,6 @@ namespace ServiceUser
         public string Telefone { get; set; }
         public DateTime DataNascimento { get; set; }
         public EnderecoDto Endereco { get; set; }
-        public List<ApoiosDto> Apoios { get; set; }
+        public List<ApoiosDto> NumerosDeApoio { get; set; }
     }
 }

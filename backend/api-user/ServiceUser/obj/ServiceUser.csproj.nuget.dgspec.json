@@ -77,7 +77,7 @@
         "projectName": "InfrastructureUser",
         "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\InfrastructureUser\\InfrastructureUser.csproj",
         "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.tabosa\\Source\\Repos\\projeto5\\backend\\api-user\\InfrastructureUser\\obj\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\api-user\\InfrastructureUser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

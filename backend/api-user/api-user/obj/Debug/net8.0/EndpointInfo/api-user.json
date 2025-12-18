@@ -215,8 +215,8 @@
             "nullable": true
           },
           "numero": {
-            "type": "string",
-            "nullable": true
+            "type": "integer",
+            "format": "int32"
           },
           "complemento": {
             "type": "string",
@@ -231,10 +231,6 @@
             "nullable": true
           },
           "estado": {
-            "type": "string",
-            "nullable": true
-          },
-          "cep": {
             "type": "string",
             "nullable": true
           }
@@ -275,7 +271,7 @@
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
           },
-          "apoios": {
+          "numerosDeApoio": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ApoiosDto"
@@ -339,7 +335,7 @@
           "endereco": {
             "$ref": "#/components/schemas/EnderecoDto"
           },
-          "apoios": {
+          "numerosDeApoio": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ApoiosDto"

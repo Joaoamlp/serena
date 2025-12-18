@@ -21,12 +21,15 @@ namespace DominioUser
         [Required]
         public string Cpf { get; set; }
 
-        public string? Rg { get; set; } // Agora opcional
-        public string? Telefone { get; set; } // Pode ficar vazio
+        [Required]
+        public string Rg { get; set; }
+        [Required]
+        public string Telefone { get; set; }
 
-        public DateTime? DataNascimento { get; set; } // Opcional
-
-        public Endereco? Endereco { get; set; } // Opcional
+        [Required]
+        public DateTime? DataNascimento { get; set; }
+        [Required]
+        public Endereco Endereco { get; set; } 
         public ICollection<Apoios>? NumerosDeApoio { get; set; } // Opcional
     }
 }
