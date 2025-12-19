@@ -951,23 +951,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\": {},
+    "C:\\Users\\Gabriel Tabosa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\api-gateway\\api-gateway.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\api-gateway\\api-gateway.csproj",
       "projectName": "api-gateway",
-      "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\api-gateway\\api-gateway.csproj",
-      "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\api-gateway\\obj\\",
+      "projectPath": "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\api-gateway\\api-gateway.csproj",
+      "packagesPath": "C:\\Users\\Gabriel Tabosa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\api-gateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\gabriel.tabosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gabriel Tabosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

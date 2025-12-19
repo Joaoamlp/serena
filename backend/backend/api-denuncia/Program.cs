@@ -27,7 +27,11 @@ if (string.IsNullOrWhiteSpace(connectionString))
     throw new InvalidOperationException(
         "Connection string 'DefaultConnection' não encontrada ou vazia. Verifique appsettings.json e o Startup Project.");
 }
-
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+    options.LogTo(Console.WriteLine, LogLevel.Information);
+});
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString) // Use o provedor de banco de dados apropriado
 );

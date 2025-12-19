@@ -16,3 +16,16 @@ C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureGene
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\refint\InfrastructureGeneric.dll
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.pdb
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\ref\InfrastructureGeneric.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\bin\Debug\net8.0\InfrastructureGeneric.deps.json
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\bin\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\bin\Debug\net8.0\InfrastructureGeneric.pdb
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.csproj.AssemblyReference.cache
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.AssemblyInfoInputs.cache
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.AssemblyInfo.cs
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.sourcelink.json
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\refint\InfrastructureGeneric.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\InfrastructureGeneric.pdb
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureGeneric\obj\Debug\net8.0\ref\InfrastructureGeneric.dll

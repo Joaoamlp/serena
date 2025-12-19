@@ -26,12 +26,12 @@ namespace ServiceDenuncia
         {
             if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
-
-            // 🔒 UsuarioId é obrigatório
-            if (dto.UsuarioId <= 0)
+            Console.WriteLine($"id do usuario é:{dto.UsuarioId}");
+            
+            if (dto.UsuarioId <= 0 || dto.UsuarioId == null)
                 throw new ApplicationException("UsuarioId é obrigatório para criar uma denúncia.");
 
-            // 🔎 valida usuário no serviço externo
+            
             
             try
             {
@@ -78,14 +78,39 @@ namespace ServiceDenuncia
         public async Task<IEnumerable<DenunciaDto>> GetAllDenunciasAsync(int userId)
         {
             if (userId <= 0)
-                throw new ArgumentException("UsuarioId inválido.");
+                throw new ArgumentException("UsuárioId inválido.", nameof(userId));
 
-            var list = await _denunciaRepository
-                .FindAllByForeignKeyAsync("UsuarioId", userId);
-                
+            try
+            {
+                var list = await _denunciaRepository
+                    .FindAllByForeignKeyAsync("UsuarioId", userId);
 
-            return _mapper.Map<IEnumerable<DenunciaDto>>(list);
+                // Segurança: evita null propagado
+                if (list == null || !list.Any())
+                    return Enumerable.Empty<DenunciaDto>();
+
+                return _mapper.Map<IEnumerable<DenunciaDto>>(list);
+            }
+            catch (TimeoutException ex)
+            {
+                // Banco demorou a responder
+                throw new ApplicationException(
+                    "Tempo limite excedido ao consultar denúncias.", ex);
+            }
+            catch (OperationCanceledException ex)
+            {
+                // Cancelamento explícito
+                throw new ApplicationException(
+                    "Operação cancelada ao buscar denúncias.", ex);
+            }
+            catch (Exception ex)
+            {
+                // Erro inesperado
+                throw new ApplicationException(
+                    "Erro inesperado ao buscar denúncias do usuário.", ex);
+            }
         }
+
 
         public async Task<DenunciaDto?> GetDenunciaByIdAsync(int id)
         {

@@ -601,7 +601,7 @@
       },
       "InfrastructureGeneric/1.0.0": {
         "dependencies": {
-          "InfrastructureDenuncia": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "8.0.0"
         },
         "runtime": {
           "InfrastructureGeneric.dll": {

@@ -24,19 +24,29 @@ namespace InfrastructureDenuncia
         {
             modelBuilder.Entity<Denuncia>(entity =>
             {
+                entity.ToTable("Denuncias");
                 entity.HasKey(d => d.Id);
 
-                entity.Property(d => d.Status).HasConversion<int>();
+                entity.Property(d => d.Status);
 
-                entity.Property(d => d.TipoViolencia).HasConversion<int>();
+                entity.Property(d => d.TipoViolencia);
 
                 entity.Property(d => d.UsuarioId).IsRequired(false);
+
+                entity.Property(e => e.NomeDenunciante)
+                    .HasMaxLength(100)
+                    .IsRequired(false);
+
+                entity.Property(e => e.Cpf)
+                      .HasMaxLength(11)
+                      .IsRequired(false);
 
                 entity.HasOne(d => d.Endereco).WithOne(e => e.Denuncia).HasForeignKey<Endereco>(e => e.DenunciaId).OnDelete(DeleteBehavior.Restrict);
 
             });
             modelBuilder.Entity<Endereco>(entity =>
             {
+                entity.ToTable("Enderecos");
                 entity.HasKey(d => d.Id);
 
             });

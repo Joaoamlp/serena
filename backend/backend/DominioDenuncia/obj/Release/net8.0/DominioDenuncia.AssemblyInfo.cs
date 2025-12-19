@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DominioDenuncia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcdf690c72627e8856a8fe6795c304e2afca7ac7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80b93da48f6ee4973c92a8b34683b131494ac81a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DominioDenuncia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DominioDenuncia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

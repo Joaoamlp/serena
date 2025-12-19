@@ -12,34 +12,34 @@ namespace ServiceUser.Profiles
     {
         public UserProfile()
         {
-            CreateMap<User, UserReadDTO>()
-            .ForMember(dest => dest.Cpf, opt => opt.MapFrom(src => MaskCpf(src.Cpf)))
-            .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
-            .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.NumerosDeApoio));
 
-            CreateMap<Endereco, EnderecoDto>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId)); // CORREÇÃO IMPORTANTE
+
+            // ----------- ENTIDADE → DTO (Leitura) -----------
+            CreateMap<User, UserReadDTO>()
+                .ForMember(dest => dest.Cpf, opt => opt.MapFrom(src => MaskCpf(src.Cpf)));
+
+            CreateMap<Endereco, EnderecoDto>(); // Remova o mapeamento manual do Id para UserId
 
             CreateMap<Apoios, ApoiosDto>();
 
+            // ----------- DTO → ENTIDADE (Atualização) -----------
 
-            // ----------- DTO → ENTIDADE (CRIAÇÃO / ATUALIZAÇÃO) -----------
+            // Configuração para evitar alteração de chaves primárias
             CreateMap<EnderecoDto, Endereco>()
-                .ForMember(dest => dest.UserId, opt => opt.Ignore()); // sempre setado no service
-                                                                      // NÃO MAPEAR dest.Id — NO SEU MODEL NÃO EXISTE Id, EXISTE UserId
+                .ForMember(dest => dest.Id, opt => opt.Ignore())    // NUNCA atualize o Id
+                .ForMember(dest => dest.UserId, opt => opt.Ignore()); // UserId é controlado pelo Service
 
             CreateMap<ApoiosDto, Apoios>()
-                .ForMember(dest => dest.UserId, opt => opt.Ignore()); // idem
-
-            CreateMap<UserCreateDto, User>()
-                .ForMember(dest => dest.PasswordHash, opt => opt.Ignore()) // hash no service
-                .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
-                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.NumerosDeApoio));
+                .ForMember(dest => dest.Id, opt => opt.Ignore())    // Ignora Id para não tentar mudar a PK
+                .ForMember(dest => dest.UserId, opt => opt.Ignore());
 
             CreateMap<UserUpdateDto, User>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())    // Impede alteração do Id do usuário
                 .ForMember(dest => dest.PasswordHash, opt => opt.Ignore())
-                .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
-                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.NumerosDeApoio));
+                // O mapeamento de listas (Endereco e Apoios) será manual no seu Service, 
+                // então podemos pedir para o AutoMapper ignorar para evitar conflitos no merge manual
+                .ForMember(dest => dest.Endereco, opt => opt.Ignore())
+                .ForMember(dest => dest.NumerosDeApoio, opt => opt.Ignore());
         }
 
         private static string MaskCpf(string cpf)

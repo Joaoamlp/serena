@@ -10,3 +10,15 @@ C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\ob
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\refint\DominioDenuncia.dll
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.pdb
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\ref\DominioDenuncia.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\bin\Debug\net8.0\DominioDenuncia.deps.json
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\bin\Debug\net8.0\DominioDenuncia.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\bin\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.AssemblyInfoInputs.cache
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.AssemblyInfo.cs
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.sourcelink.json
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\refint\DominioDenuncia.dll
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\ref\DominioDenuncia.dll
