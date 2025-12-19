@@ -1,21 +1,3 @@
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.deps.json
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.runtimeconfig.json
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.csproj.AssemblyReference.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.AssemblyInfoInputs.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.AssemblyInfo.cs
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.csproj.CoreCompileInputs.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.sourcelink.json
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\Infrastr.07C192CF.Up2Date
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\refint\InfrastructureUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.genruntimeconfig.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\ref\InfrastructureUser.dll
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.deps.json
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.runtimeconfig.json
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.dll
@@ -34,12 +16,6 @@ C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.pdb
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.genruntimeconfig.cache
 C:\Users\mater\Desktop\serena\backend\api-user\InfrastructureUser\obj\Debug\net8.0\ref\InfrastructureUser.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioDenuncia.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureDenuncia.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureGeneric.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureGeneric.pdb
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioDenuncia.pdb
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureDenuncia.pdb
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.deps.json
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.runtimeconfig.json
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.dll
@@ -60,3 +36,23 @@ C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUse
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.pdb
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.genruntimeconfig.cache
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\ref\InfrastructureUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.deps.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.runtimeconfig.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\InfrastructureGeneric.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\bin\Debug\net8.0\DominioUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.csproj.AssemblyReference.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.AssemblyInfoInputs.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.AssemblyInfo.cs
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.csproj.CoreCompileInputs.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.sourcelink.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\Infrastr.07C192CF.Up2Date
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\refint\InfrastructureUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\InfrastructureUser.genruntimeconfig.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\InfrastructureUser\obj\Debug\net8.0\ref\InfrastructureUser.dll

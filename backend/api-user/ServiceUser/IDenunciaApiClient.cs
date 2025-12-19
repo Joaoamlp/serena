@@ -8,6 +8,6 @@ namespace ServiceUser
 {
     public interface IDenunciaApiClient
     {
-        void DeletDenunciaByUserIdAsync(int userId);
+        Task DeletDenunciaByUserIdAsync(int userId);
     }
 }

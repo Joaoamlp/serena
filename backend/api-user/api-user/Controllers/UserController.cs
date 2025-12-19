@@ -84,7 +84,18 @@ namespace api_user.Controllers
             return Ok(result);
         }
 
-        
+        [HttpGet("api/{id}")]
+        public async Task<IActionResult> GetByIdApi(int id)
+        {
+            var result = await _userService.GetUserByIdApiAsync(id);
+
+            if (result == null)
+                return NotFound("Usuário não encontrado.");
+
+            return Ok(result);
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Create(UserCreateDto dto)
         {

@@ -26,7 +26,7 @@ namespace ServiceDenuncia.Profiles
                     opt => opt.MapFrom(_ => DenunciaStatus.Nova))
                 .ForMember(dest => dest.TipoViolencia,
                     opt => opt.MapFrom(src =>
-                        Enum.Parse<TipoViolencia>(src.TipoViolencia, true)));
+                        Enum.Parse<TipoViolencia>(src.TipoViolencia.ToString())));
 
             // Entity → DTO
             CreateMap<Denuncia, DenunciaDto>()

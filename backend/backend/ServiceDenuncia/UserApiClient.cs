@@ -37,7 +37,7 @@ namespace ServiceDenuncia
             try
             {
                 // Assume endpoint GET /api/users/{id}/exists returns 200 (exists) or 404 (not exists)
-                var resp = await _http.GetAsync($"/api/User/{userId}");
+                var resp = await _http.GetAsync($"/api/User/api/{userId}");
 
                 
 

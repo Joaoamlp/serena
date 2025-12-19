@@ -109,7 +109,7 @@ namespace api_denuncia.Controllers
                 return Problem(detail: ex.Message, statusCode: 500, title: "Erro interno");
             }
         }
-        [HttpPost("DeleteUser/{id:int}")]
+        [HttpDelete("DeleteUser/{id:int}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             try

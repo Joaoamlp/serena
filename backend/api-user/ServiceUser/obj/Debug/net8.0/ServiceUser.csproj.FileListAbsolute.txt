@@ -1,21 +1,3 @@
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.deps.json
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.csproj.AssemblyReference.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.AssemblyInfoInputs.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.AssemblyInfo.cs
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.csproj.CoreCompileInputs.cache
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.sourcelink.json
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceU.825AEC69.Up2Date
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\refint\ServiceUser.dll
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.pdb
-C:\Users\gabriel.tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ref\ServiceUser.dll
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.deps.json
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.dll
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.pdb
@@ -34,12 +16,6 @@ C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\Serv
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\refint\ServiceUser.dll
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.pdb
 C:\Users\mater\Desktop\serena\backend\api-user\ServiceUser\obj\Debug\net8.0\ref\ServiceUser.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioDenuncia.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureDenuncia.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureGeneric.dll
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureGeneric.pdb
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioDenuncia.pdb
-C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureDenuncia.pdb
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.deps.json
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.dll
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.pdb
@@ -60,3 +36,23 @@ C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\D
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\refint\ServiceUser.dll
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.pdb
 C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ref\ServiceUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.deps.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\ServiceUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureGeneric.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureGeneric.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\DominioUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\bin\Debug\net8.0\InfrastructureUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.csproj.AssemblyReference.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.AssemblyInfoInputs.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.AssemblyInfo.cs
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.csproj.CoreCompileInputs.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.sourcelink.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceU.825AEC69.Up2Date
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\refint\ServiceUser.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ServiceUser.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\api-user\ServiceUser\obj\Debug\net8.0\ref\ServiceUser.dll

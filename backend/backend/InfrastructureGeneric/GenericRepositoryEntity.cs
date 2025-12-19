@@ -22,9 +22,7 @@ namespace InfrastructureGeneric
             return await _context.SaveChangesAsync();
         }
 
-        // ============================
-        // 🔧 CORRIGIDO: FK Nullable
-        // ============================
+        
         public async Task<IEnumerable<T>> FindAllByForeignKeyAsync(
             string foreignKeyName,
             object foreignKeyValue)
@@ -42,7 +40,7 @@ namespace InfrastructureGeneric
             var parameter = Expression.Parameter(entityType, "e");
             var propertyAccess = Expression.Property(parameter, propertyInfo);
 
-            // 🔑 TRATAMENTO DE Nullable<T>
+            // TRATAMENTO DE Nullable<T>
             var propertyType = Nullable.GetUnderlyingType(propertyInfo.PropertyType)
                                ?? propertyInfo.PropertyType;
 
@@ -62,9 +60,7 @@ namespace InfrastructureGeneric
                 .ToListAsync();
         }
 
-        // ============================
-        // ⭐ MÉTODO RECOMENDADO (SAFE)
-        // ============================
+        
         public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet

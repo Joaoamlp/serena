@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using InfrastructureGeneric;
+using ServiceUser.DTOs;
 namespace ServiceUser
 {
     public class UserService : IUserService
@@ -81,7 +82,7 @@ namespace ServiceUser
             // Como ignoramos Endereco e Apoios no Profile, esta linha não afetará as chaves ou listas
             _mapper.Map(dto, existing);
 
-            // ======= 1:1 Endereco (Merge Seguro) =======
+            // 1:1 Endereco (Merge Seguro)
             if (dto.Endereco != null)
             {
                 if (existing.Endereco == null)
@@ -102,7 +103,7 @@ namespace ServiceUser
                 }
             }
 
-            // ======= 1:N Apoios (Sincronização) =======
+            // 
             var incomingApoios = dto.NumerosDeApoio ?? new List<ApoiosDto>();
             var incomingIds = incomingApoios.Where(a => a.Id > 0).Select(a => a.Id).ToHashSet();
 
@@ -194,8 +195,24 @@ namespace ServiceUser
                 throw new Exception($"Erro ao buscar o usuário ID {id}. Verifique a conexão com o banco.", ex);
             }
         }
+        public async Task<UserInternalDTO?> GetUserByIdApiAsync(int id)
+        {
+            try
+            {
+                var user = await _userRepository.GetByIdWithIncludesAsync(
+                    id,
+                    u => u.Endereco,
+                    u => u.NumerosDeApoio);
 
-        
+                return user == null ? null : _mapper.Map<UserInternalDTO>(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao buscar o usuário ID {id}. Verifique a conexão com o banco.", ex);
+            }
+        }
+
+
 
         private async Task VerifyUniqueFieldsAsync(string email, string cpf, string rg, int? ignoreId = null)
         {

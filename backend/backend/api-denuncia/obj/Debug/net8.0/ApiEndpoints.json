@@ -81,7 +81,7 @@
     "ContainingType": "api_denuncia.Controllers.DenunciasController",
     "Method": "DeleteUser",
     "RelativePath": "api/Denuncias/DeleteUser/{id}",
-    "HttpMethod": "POST",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

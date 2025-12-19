@@ -24,39 +24,39 @@ namespace ServiceDenuncia
 
         public async Task<DenunciaDto> CreatDenunciaAsync(DenunciaCreateDto dto)
         {
-            if (dto == null)
-                throw new ArgumentNullException(nameof(dto));
-            Console.WriteLine($"id do usuario é:{dto.UsuarioId}");
-            
-            if (dto.UsuarioId <= 0 || dto.UsuarioId == null)
-                throw new ApplicationException("UsuarioId é obrigatório para criar uma denúncia.");
+            if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-            
-            
+            Console.WriteLine($"[LOG] Iniciando criação. UsuarioId: {dto.UsuarioId}");
+
             try
             {
                 var resp = await _userClient.UserExistsAsync(dto.UsuarioId.Value);
-                if (resp == null)
-                    throw new ApplicationException("Usuário não encontrado no serviço externo.");
+                if (resp == null) throw new ApplicationException("Usuário não encontrado.");
+
+                Console.WriteLine($"[LOG] Usuário encontrado. Tentando mesclar dados do Usuário no DTO...");
+
+                // CUIDADO: Verifique se existe CreateMap<UserResponse, DenunciaCreateDto>() no seu Profile
                 _mapper.Map(resp, dto);
-
             }
-            catch (TimeoutException)
+            catch (AutoMapperMappingException ex)
             {
-                throw new ApplicationException("Timeout ao verificar usuário.");
+                Console.WriteLine("--- ERRO AO MESCLAR USUÁRIO NO DTO ---");
+                ImprimirDetalhesAutoMapper(ex);
+                throw;
             }
-            catch (Exception)
-            {
-                throw new ApplicationException("Erro ao verificar usuário no serviço externo.");
-            }
-
-     
+            catch (Exception ex) { throw new ApplicationException("Erro ao verificar usuário.", ex); }
 
             try
             {
-                
+                if (!string.IsNullOrEmpty(dto.Cpf))
+                {
+                    // Remove tudo que não for número (inclusive aspas, pontos, traços e espaços)
+                    dto.Cpf = new string(dto.Cpf.Where(char.IsDigit).ToArray());
+                    Console.WriteLine($"[LOG] CPF formatado: {dto.Cpf}");
+                }
+                Console.WriteLine("[LOG] Tentando mapear DTO para Entidade Denuncia...");
                 var entity = _mapper.Map<Denuncia>(dto);
-                
+
                 entity.CriadoEm = DateTime.UtcNow;
                 entity.Status = DenunciaStatus.Nova;
 
@@ -65,14 +65,27 @@ namespace ServiceDenuncia
 
                 return _mapper.Map<DenunciaDto>(entity);
             }
-            catch (DbUpdateException ex)
-            {
-                throw new ApplicationException("Erro ao salvar denúncia no banco.", ex);
-            }
             catch (AutoMapperMappingException ex)
             {
-                throw new ApplicationException("Erro ao mapear dados da denúncia.", ex);
+                Console.WriteLine("--- ERRO AO MAPEAR DTO PARA ENTIDADE ---");
+                ImprimirDetalhesAutoMapper(ex);
+                throw;
             }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine($"[ERRO BANCO]: {ex.InnerException?.Message}");
+                throw;
+            }
+        }
+
+        // Método auxiliar para não repetir código de print
+        private void ImprimirDetalhesAutoMapper(AutoMapperMappingException ex)
+        {
+            Console.WriteLine($"Mensagem: {ex.Message}");
+            Console.WriteLine($"Tipo Origem: {ex.TypeMap?.SourceType.Name}");
+            Console.WriteLine($"Tipo Destino: {ex.TypeMap?.DestinationType.Name}");
+            if (ex.InnerException != null)
+                Console.WriteLine($"Detalhe Interno: {ex.InnerException.Message}");
         }
 
         public async Task<IEnumerable<DenunciaDto>> GetAllDenunciasAsync(int userId)

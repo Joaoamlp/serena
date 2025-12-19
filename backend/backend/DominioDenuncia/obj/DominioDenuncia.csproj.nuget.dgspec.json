@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj": {}
+    "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj": {
+    "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj",
+        "projectUniqueName": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj",
         "projectName": "DominioDenuncia",
-        "projectPath": "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj",
-        "packagesPath": "C:\\Users\\Gabriel Tabosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabriel Tabosa\\Source\\Repos\\projeto5\\backend\\backend\\DominioDenuncia\\obj\\",
+        "projectPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\DominioDenuncia\\DominioDenuncia.csproj",
+        "packagesPath": "C:\\Users\\gabriel.tabosa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gabriel.tabosa\\source\\repos\\projeto5\\backend\\backend\\DominioDenuncia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Gabriel Tabosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabriel.tabosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

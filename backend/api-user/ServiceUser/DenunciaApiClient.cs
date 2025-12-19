@@ -16,7 +16,7 @@ namespace ServiceUser
             _http = http;
         }
 
-        public async void DeletDenunciaByUserIdAsync(int userId)
+        public async Task DeletDenunciaByUserIdAsync(int userId)
         {
             try
             {
@@ -25,20 +25,25 @@ namespace ServiceUser
                     throw new ArgumentException("UsuarioId inválido para deleção de denúncias.");
                 }
 
-                var resp = await _http.GetAsync($"/api/denuncias/DeleteUser/{userId}");
+                var resp = await _http.DeleteAsync($"/api/denuncias/DeleteUser/{userId}"); // Use DeleteAsync se for um DELETE na API
+
                 if (!resp.IsSuccessStatusCode)
                 {
                     var error = await resp.Content.ReadAsStringAsync();
+                    // Log do erro real para você debugar
+                    Console.WriteLine($"Erro da API externa: {error}");
                     throw new ApplicationException($"Erro ao deletar as denuncias: {error}");
                 }
             }
             catch (HttpRequestException ex)
             {
-                throw new HttpRequestException("Erro ao chamar serviço de denúncias.", ex);
+                // Log ex.Message aqui antes de dar o throw
+                throw new ApplicationException("Erro de conexão ao serviço de denúncias.", ex);
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Erro ao deletar as denúncias do usuário.", ex);
+                // Aqui o throw agora será capturado corretamente pelo sistema
+                throw new ApplicationException("Erro ao processar deleção das denúncias.", ex);
             }
         }
     }

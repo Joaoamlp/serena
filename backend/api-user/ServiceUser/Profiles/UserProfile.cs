@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using DominioUser;
+using ServiceUser.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutoMapper;
-using DominioUser;
 
 namespace ServiceUser.Profiles
 {
@@ -17,8 +18,13 @@ namespace ServiceUser.Profiles
             // ----------- ENTIDADE → DTO (Leitura) -----------
             CreateMap<User, UserReadDTO>()
                 .ForMember(dest => dest.Cpf, opt => opt.MapFrom(src => MaskCpf(src.Cpf)));
+            CreateMap<User, UserInternalDTO>();
 
             CreateMap<Endereco, EnderecoDto>(); // Remova o mapeamento manual do Id para UserId
+            CreateMap<UserCreateDto, User>()
+                .ForMember(dest => dest.PasswordHash, opt => opt.Ignore()) // hash no service
+                .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
+                .ForMember(dest => dest.NumerosDeApoio, opt => opt.MapFrom(src => src.NumerosDeApoio));
 
             CreateMap<Apoios, ApoiosDto>();
 
