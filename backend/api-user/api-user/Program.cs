@@ -8,6 +8,8 @@ using DominioUser;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("https://localhost:7094","http://localhost:5223");
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -36,6 +38,25 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 builder.Services.AddScoped(typeof(IGenericRepository<User>), typeof(GenericRepositoryEntity<User,AppDbContext>));
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+
+        // Esta é a linha chave:
+        // Se o banco não existir, ele cria o banco E todas as tabelas baseadas nas Models.
+        // Se o banco já existir, ele não faz nada.
+        context.Database.EnsureCreated();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Ocorreu um erro ao criar o banco de dados.");
+    }
+}
 
 
 

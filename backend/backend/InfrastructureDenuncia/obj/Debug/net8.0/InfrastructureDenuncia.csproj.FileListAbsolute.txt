@@ -1,21 +1,3 @@
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.deps.json
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.runtimeconfig.json
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.dll
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.pdb
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\DominioDenuncia.dll
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\DominioDenuncia.pdb
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.csproj.AssemblyReference.cache
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.AssemblyInfoInputs.cache
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.AssemblyInfo.cs
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.csproj.CoreCompileInputs.cache
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.sourcelink.json
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\Infrastr.29BFF6CD.Up2Date
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.dll
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\refint\InfrastructureDenuncia.dll
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.pdb
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\InfrastructureDenuncia.genruntimeconfig.cache
-C:\Users\Gabriel Tabosa\Source\Repos\projeto5\backend\backend\InfrastructureDenuncia\obj\Debug\net8.0\ref\InfrastructureDenuncia.dll
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.deps.json
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.runtimeconfig.json
 C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\InfrastructureDenuncia\bin\Debug\net8.0\InfrastructureDenuncia.dll

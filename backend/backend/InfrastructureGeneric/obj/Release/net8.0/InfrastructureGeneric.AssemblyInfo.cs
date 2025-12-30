@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InfrastructureGeneric")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea97715b32cbf0302f7d7a99ea8e1a0e4956b860")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef41997774648058b61a5b31f317f00b527f63d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("InfrastructureGeneric")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InfrastructureGeneric")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

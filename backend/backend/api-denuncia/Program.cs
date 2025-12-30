@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.WebHost.UseUrls("https://localhost:7203","http://localhost:5226");
 
 builder.Services.AddControllers()
     .AddJsonOptions(opt =>
@@ -46,6 +47,25 @@ builder.Services.AddHttpClient<IUserApiClient, UserApiClient>(client =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+
+        // Esta é a linha chave:
+        // Se o banco não existir, ele cria o banco E todas as tabelas baseadas nas Models.
+        // Se o banco já existir, ele não faz nada.
+        context.Database.EnsureCreated();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Ocorreu um erro ao criar o banco de dados.");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

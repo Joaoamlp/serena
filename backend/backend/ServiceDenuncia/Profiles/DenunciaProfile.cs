@@ -33,7 +33,7 @@ namespace ServiceDenuncia.Profiles
                 .ForMember(dest => dest.Status,
                     opt => opt.MapFrom(src => src.Status.ToString()))
                 .ForMember(dest => dest.TipoViolencia,
-                    opt => opt.MapFrom(src => src.TipoViolencia.ToString()));
+                    opt => opt.MapFrom(src => src.TipoViolencia.ToString())).ReverseMap();
 
             CreateMap<UserBasicDto, DenunciaCreateDto>().ForMember(d => d.NomeDenunciante,
                 opt => opt.MapFrom(src => src.Name))

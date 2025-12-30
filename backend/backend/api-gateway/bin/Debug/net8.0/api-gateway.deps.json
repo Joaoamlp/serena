@@ -33,7 +33,6 @@
       },
       "Microsoft.AspNetCore.JsonPatch/8.0.15": {
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
@@ -67,8 +66,6 @@
           }
         }
       },
-      "Microsoft.CSharp/4.7.0": {},
-      "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -78,9 +75,6 @@
         }
       },
       "Microsoft.Extensions.DiagnosticAdapter/3.1.32": {
-        "dependencies": {
-          "System.Diagnostics.DiagnosticSource": "4.7.1"
-        },
         "runtime": {
           "lib/netcoreapp2.0/Microsoft.Extensions.DiagnosticAdapter.dll": {
             "assemblyVersion": "3.1.32.0",
@@ -132,7 +126,6 @@
       },
       "Swashbuckle.AspNetCore/6.6.2": {
         "dependencies": {
-          "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
           "Swashbuckle.AspNetCore.Swagger": "6.6.2",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.6.2",
           "Swashbuckle.AspNetCore.SwaggerUI": "6.6.2"
@@ -167,8 +160,7 @@
             "fileVersion": "6.6.2.401"
           }
         }
-      },
-      "System.Diagnostics.DiagnosticSource/4.7.1": {}
+      }
     }
   },
   "libraries": {
@@ -211,20 +203,6 @@
       "sha512": "sha512-Fn61/DasD789RTebTUTkjd8FpHCei4fW7feTyGBwKM74InDmbaPN6MkA4XiYL9HQKtG3+SDvGIvHt1lJMzUGjQ==",
       "path": "microsoft.aspnetcore.mvc.newtonsoftjson/8.0.15",
       "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.8.0.15.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
-      "path": "microsoft.extensions.apidescription.server/6.0.5",
-      "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
       "type": "package",
@@ -295,13 +273,6 @@
       "sha512": "sha512-mBBb+/8Hm2Q3Wygag+hu2jj69tZW5psuv0vMRXY07Wy+Rrj40vRP8ZTbKBhs91r45/HXT4aY4z0iSBYx1h6JvA==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.6.2",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
-    },
-    "System.Diagnostics.DiagnosticSource/4.7.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-j81Lovt90PDAq8kLpaJfJKV/rWdWuEk6jfV+MBkee33vzYLEUsy4gXK8laa9V2nZlLM9VM9yA/OOQxxPEJKAMw==",
-      "path": "system.diagnostics.diagnosticsource/4.7.1",
-      "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
     }
   }
 }
